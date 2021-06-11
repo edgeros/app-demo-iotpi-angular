@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>设备详情</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        设备ID
+      </ion-label>
+      <ion-note>
+        {{iotpi.devid}}
+      </ion-note>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+          设备名称
+        </ion-label>
+        <ion-note>
+          {{iotpi.alias}}
+        </ion-note>
+      </ion-item>
+    <ion-item>
+      <ion-icon class="led"  [color]="leds.led1?'warning':'medium'" name="bulb"></ion-icon>
+      <ion-toggle slot="end"  color="primary" [(ngModel)]="leds.led1"  (click) = "iotpiControl(1)"></ion-toggle>
+    </ion-item>
+    <ion-item>
+        <ion-icon class="led"  [color]="leds.led2?'warning':'medium'" name="bulb"></ion-icon>
+        <ion-toggle slot="end"  color="primary" [(ngModel)] = "leds.led2" (click) = "iotpiControl(2)"></ion-toggle>
+      </ion-item>
+      <ion-item>
+          <ion-icon class="led" [color]="leds.led3?'warning':'medium'" name="bulb"></ion-icon>
+          <ion-toggle slot="end" color="primary" [(ngModel)] = "leds.led3" (click) = "iotpiControl(3)" ></ion-toggle>
+      </ion-item>
+  </ion-list>
+</ion-content>
